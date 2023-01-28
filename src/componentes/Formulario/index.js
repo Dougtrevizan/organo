@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
-
 
 const Formulario = (props) => {
 
@@ -29,31 +28,30 @@ const Formulario = (props) => {
     return (
         <section className="formulario">
             <form onSubmit={aoSalvar}>
-                <h2>Preencha os dados para criar o card do colaborador.</h2>
-                <CampoTexto
+                <h2>Preencha os dados para criar o card do colaborador</h2>
+                <CampoTexto 
                     obrigatorio={true}
                     label="Nome"
-                    placeholder="Digite seu nome"
+                    placeholder="Digite seu nome" 
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}
                 />
                 <CampoTexto
                     obrigatorio={true}
                     label="Cargo"
-                    placeholder="Digite seu cargo"
+                    placeholder="Digite seu cargo" 
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
-
                 />
                 <CampoTexto
                     label="Imagem"
-                    placeholder="Digite o endereço da imagem"
+                    placeholder="Digite o endereço da imagem" 
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                 />
                 <ListaSuspensa
                     obrigatorio={true}
-                    label="Time"
+                    label="Time" 
                     itens={props.times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
@@ -63,9 +61,7 @@ const Formulario = (props) => {
                 </Botao>
             </form>
         </section>
-
     )
-
 }
 
 export default Formulario
